@@ -7,7 +7,7 @@
   "drive": {
     "type": "falcon",
     "id": 4,
-    "canbus": "canivore"
+    "canbus": "Canivore"
   },
   "angle": {
     "type": "sparkmax",
@@ -17,11 +17,11 @@
   "encoder": {
     "type": "cancoder",
     "id": 6,
-    "canbus": "canivore"
+    "canbus": "Canivore"
   },
   "inverted": {
     "drive": false,
-    "angle": false
+    "angle": true
   },
-  "absoluteEncoderInverted": false
+  "absoluteEncoderInverted": true
 }

@@ -3,11 +3,11 @@
     "front": -9.875,
     "left": -9.875
   },
-  "absoluteEncoderOffset": 355.693,
+  "absoluteEncoderOffset": 116,
   "drive": {
     "type": "falcon",
     "id": 10,
-    "canbus": "canivore"
+    "canbus": "Canivore"
   },
   "angle": {
     "type": "sparkmax",
@@ -17,7 +17,7 @@
   "encoder": {
     "type": "cancoder",
     "id": 12,
-    "canbus": "canivore"
+    "canbus": "Canivore"
   },
   "inverted": {
     "drive": false,
