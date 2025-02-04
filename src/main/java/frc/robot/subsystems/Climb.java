@@ -13,12 +13,11 @@ public class Climb extends SubsystemBase {
     private static final int LEADER_ID = 20;
     private static final int FOLLOWER_ID = 21;
 
-    private static final double CLIMB_SPEED = 0.1;
+    private static final double CLIMB_SPEED = 0.7;
 
     public Climb() {
-        this.leader = new TalonFX(LEADER_ID);
-        this.follower = new TalonFX(FOLLOWER_ID);
-        follower.setControl(new Follower(leader.getDeviceID(), true));
+        this.leader = new TalonFX(LEADER_ID, "Canivore");
+        this.follower = new TalonFX(FOLLOWER_ID, "Canivore");
 
         ntDispTab("Climb")
         .add("Climb Duty Cycle", this::getDutyCycle);
@@ -26,10 +25,12 @@ public class Climb extends SubsystemBase {
 
     public void run() {
         this.leader.set(CLIMB_SPEED); 
+        this.follower.set(-CLIMB_SPEED);
     }
 
     public void stop() {
         this.leader.set(0); 
+        this.follower.set(0);
     }
 
     public double getDutyCycle() {

@@ -12,11 +12,9 @@ public class Elevator extends SubsystemBase {
     private static final int FOLLOWER_ID = 15;
 
     public Elevator() {
-        this.leader = new TalonFX(LEADER_ID);
-        this.follower = new TalonFX(FOLLOWER_ID);
+        this.leader = new TalonFX(LEADER_ID, "Canivore");
+        this.follower = new TalonFX(FOLLOWER_ID, "Canivore");
         follower.setControl(new Follower(leader.getDeviceID(), false));
     }
-
-    
 
 }

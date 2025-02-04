@@ -25,6 +25,4 @@ public class ManualControls {
         return secondXbox.getXButtonPressed();
     }
 
-
-
 }

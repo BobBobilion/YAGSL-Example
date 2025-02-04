@@ -34,7 +34,6 @@ public class RobotContainer {
 
   private final Climb climb;
   private final ClimbCommand climbCommand;
-
   private final Grabber grabber;
   private final GrabberCommand grabberCommand;
 
@@ -50,11 +49,10 @@ public class RobotContainer {
 
     climb = new Climb();
     climbCommand = new ClimbCommand(climb, controls); 
-    climbCommand.addRequirements(climb);
-
+    climb.setDefaultCommand(climbCommand);
     grabber = new Grabber();
     grabberCommand = new GrabberCommand(grabber, controls);
-    grabberCommand.addRequirements(grabber);
+    grabber.setDefaultCommand(grabberCommand);
 
     configureBindings();
     DriverStation.silenceJoystickConnectionWarning(true);
@@ -79,8 +77,8 @@ public class RobotContainer {
     driverXbox.back().whileTrue(Commands.none());
     driverXbox.leftBumper().whileTrue(Commands.runOnce(drivebase::lock, drivebase).repeatedly());
     driverXbox.rightBumper().onTrue(Commands.none());
-
   }
+  
   public Command getAutonomousCommand() {
     return drivebase.getAutonomousCommand("New Auto");
   }
