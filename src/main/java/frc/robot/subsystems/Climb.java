@@ -17,7 +17,9 @@ public class Climb extends SubsystemBase {
 
     public Climb() {
         this.leader = new TalonFX(LEADER_ID, "Canivore");
-        this.follower = new TalonFX(FOLLOWER_ID, "Canivore");
+        this.follower = new TalonFX(FOLLOWER_ID, "Canivore"); // TODO: THIS SHOULD BE MADE A FOLLOWER
+                                                                    //  Rn this is just another motor, not a follower
+
 
         ntDispTab("Climb")
         .add("Climb Duty Cycle", this::getDutyCycle);
@@ -32,6 +34,8 @@ public class Climb extends SubsystemBase {
         this.leader.set(0); 
         this.follower.set(0);
     }
+
+    // TODO: Add a reverse climb (climb down) function
 
     public double getDutyCycle() {
         return leader.get();

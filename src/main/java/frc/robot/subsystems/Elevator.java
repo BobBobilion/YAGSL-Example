@@ -2,7 +2,9 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix6.controls.Follower;
+import com.ctre.phoenix6.controls.PositionDutyCycle;
 public class Elevator extends SubsystemBase {
     
     private TalonFX leader;
@@ -16,5 +18,8 @@ public class Elevator extends SubsystemBase {
         this.follower = new TalonFX(FOLLOWER_ID, "Canivore");
         follower.setControl(new Follower(leader.getDeviceID(), false));
     }
+
+    
+
 
 }

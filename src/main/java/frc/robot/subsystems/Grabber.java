@@ -20,7 +20,7 @@ public class Grabber extends SubsystemBase {
     public Grabber() {
 
         this.grabberMotor = new SparkMax(GRABBER_MOTOR_ID, MotorType.kBrushless);
-        rateLimiter = new SlewRateLimiter(1.0 / 0.5); 
+        rateLimiter = new SlewRateLimiter(1.0 / 0.5); // TODO: get rid of this limiter, you dont need a limiter for a simple roller, adds unnecessary complication
 
         ntDispTab("Grabber")
             .add("Grabber Duty Cycle", this::getDutyCycle);
